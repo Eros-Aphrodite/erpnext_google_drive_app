@@ -1,0 +1,130 @@
+{
+ "doctype": "DocType",
+ "name": "Google Drive Settings",
+ "module": "Google Drive Integration",
+ "issingle": 1,
+ "is_single": 1,
+ "allow_rename": 0,
+ "prevent_rename": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "field_order": [
+  "section_google",
+  "client_id",
+  "client_secret",
+  "redirect_uri",
+  "column_tokens",
+  "access_token",
+  "refresh_token",
+  "token_expires_at",
+  "section_folders",
+  "root_folder_id",
+  "before_folder_name",
+  "after_folder_name",
+  "section_behavior",
+  "auto_create_project_folder",
+  "auto_upload_project_photos"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_google",
+   "fieldtype": "Section Break",
+   "label": "Google OAuth (Drive API)"
+  },
+  {
+   "fieldname": "client_id",
+   "fieldtype": "Data",
+   "label": "Client ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "client_secret",
+   "fieldtype": "Password",
+   "label": "Client Secret",
+   "reqd": 1
+  },
+  {
+   "fieldname": "redirect_uri",
+   "fieldtype": "Data",
+   "label": "Redirect URI",
+   "description": "Set this exact URL as an Authorized Redirect URI in Google Cloud Console."
+  },
+  {
+   "fieldname": "column_tokens",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "access_token",
+   "fieldtype": "Password",
+   "label": "Access Token",
+   "read_only": 1
+  },
+  {
+   "fieldname": "refresh_token",
+   "fieldtype": "Password",
+   "label": "Refresh Token",
+   "read_only": 1
+  },
+  {
+   "fieldname": "token_expires_at",
+   "fieldtype": "Datetime",
+   "label": "Token Expires At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_folders",
+   "fieldtype": "Section Break",
+   "label": "Drive Folder Rules"
+  },
+  {
+   "fieldname": "root_folder_id",
+   "fieldtype": "Data",
+   "label": "Root Folder ID (Optional)",
+   "description": "If empty, project folders are created in Drive root. If set, folders are created under this parent folder."
+  },
+  {
+   "fieldname": "before_folder_name",
+   "fieldtype": "Data",
+   "label": "Before Folder Name",
+   "default": "Before"
+  },
+  {
+   "fieldname": "after_folder_name",
+   "fieldtype": "Data",
+   "label": "After Folder Name",
+   "default": "After"
+  },
+  {
+   "fieldname": "section_behavior",
+   "fieldtype": "Section Break",
+   "label": "Automation"
+  },
+  {
+   "fieldname": "auto_create_project_folder",
+   "fieldtype": "Check",
+   "label": "Auto-create Drive Folder per Project",
+   "default": 1
+  },
+  {
+   "fieldname": "auto_upload_project_photos",
+   "fieldtype": "Check",
+   "label": "Auto-upload Project Photos to Drive",
+   "default": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  }
+ ]
+}
+

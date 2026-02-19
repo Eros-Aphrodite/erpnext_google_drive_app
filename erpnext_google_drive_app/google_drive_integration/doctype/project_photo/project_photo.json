@@ -1,0 +1,72 @@
+{
+ "doctype": "DocType",
+ "name": "Project Photo",
+ "module": "Google Drive Integration",
+ "allow_rename": 0,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "project",
+ "field_order": [
+  "project",
+  "stage",
+  "photo",
+  "google_drive_file_id",
+  "google_drive_url",
+  "uploaded_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fieldname": "stage",
+   "fieldtype": "Select",
+   "label": "Stage",
+   "options": "Before\nAfter",
+   "reqd": 1
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach Image",
+   "label": "Photo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "google_drive_file_id",
+   "fieldtype": "Data",
+   "label": "Google Drive File ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "google_drive_url",
+   "fieldtype": "Data",
+   "label": "Google Drive URL",
+   "read_only": 1
+  },
+  {
+   "fieldname": "uploaded_at",
+   "fieldtype": "Datetime",
+   "label": "Uploaded At",
+   "read_only": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  }
+ ]
+}
+

@@ -1,0 +1,5 @@
+recursive-include erpnext_google_drive_app *.json
+recursive-include erpnext_google_drive_app *.js
+recursive-include erpnext_google_drive_app *.py
+recursive-include erpnext_google_drive_app *.txt
+
