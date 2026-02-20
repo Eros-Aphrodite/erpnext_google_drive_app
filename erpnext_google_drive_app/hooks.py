@@ -7,3 +7,13 @@ app_description = "Connect ERPNext to Google Drive and auto-store project photos
 app_email = "you@example.com"
 app_license = "MIT"
 
+# Add app to apps screen
+add_to_apps_screen = [
+    {
+        "name": "erpnext_google_drive_app",
+        "logo": "/assets/erpnext_google_drive_app/images/google-drive-logo.svg",
+        "title": "Google Drive",
+        "route": "/app/google-drive-integration",
+    }
+]
+

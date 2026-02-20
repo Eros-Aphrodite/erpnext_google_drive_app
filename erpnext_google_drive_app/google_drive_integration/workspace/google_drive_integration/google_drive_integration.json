@@ -1,0 +1,120 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"header_main\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\"><b>Google Drive Integration</b></span><br><span class=\\\"text-muted\\\">Automatically store project photos and documents in Google Drive</span>\",\"col\":12}},{\"id\":\"spacer1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"shortcuts_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Quick Access</b></span>\",\"col\":12}},{\"id\":\"shortcut_settings\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Google Drive Settings\",\"col\":4}},{\"id\":\"shortcut_folder\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Google Drive Project Folder\",\"col\":4}},{\"id\":\"shortcut_photo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Photo\",\"col\":4}},{\"id\":\"spacer2\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"cards_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Modules</b></span>\",\"col\":12}},{\"id\":\"card_config\",\"type\":\"card\",\"data\":{\"card_name\":\"Configuration\",\"col\":4}},{\"id\":\"card_projects\",\"type\":\"card\",\"data\":{\"card_name\":\"Project Management\",\"col\":4}},{\"id\":\"card_photos\",\"type\":\"card\",\"data\":{\"card_name\":\"Photo Management\",\"col\":4}}]",
+ "creation": "2026-02-20 00:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "cloud-upload",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Google Drive Integration",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Configuration",
+   "link_count": 1,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Google Drive Settings",
+   "link_count": 0,
+   "link_to": "Google Drive Settings",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Management",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Google Drive Project Folder",
+   "link_count": 0,
+   "link_to": "Google Drive Project Folder",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Photo",
+   "link_count": 0,
+   "link_to": "Project Photo",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Photo Management",
+   "link_count": 1,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Project Photo List",
+   "link_count": 0,
+   "link_to": "Project Photo",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-02-20 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Google Drive Integration",
+ "name": "google-drive-integration",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 11.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "Form",
+   "label": "Google Drive Settings",
+   "link_to": "Google Drive Settings",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Google Drive Project Folder",
+   "link_to": "Google Drive Project Folder",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Project Photo",
+   "link_to": "Project Photo",
+   "type": "DocType"
+  }
+ ],
+ "title": "Google Drive Integration"
+}

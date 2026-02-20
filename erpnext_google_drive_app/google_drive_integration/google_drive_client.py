@@ -120,9 +120,11 @@ class GoogleDriveClient:
 
     def find_folder(self, *, name: str, parent_id: str | None) -> str | None:
         # Search for a folder with a given name (not trashed)
+        # Escape quotes in name for Google Drive API query
+        escaped_name = name.replace('"', '\\"')
         q = [
             'mimeType="application/vnd.google-apps.folder"',
-            f'name="{name.replace("\"", "\\\"")}"',
+            f'name="{escaped_name}"',
             "trashed=false",
         ]
         if parent_id:
