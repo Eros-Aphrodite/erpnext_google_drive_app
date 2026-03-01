@@ -1,0 +1,47 @@
+{
+ "doctype": "DocType",
+ "name": "Project Photo Item",
+ "module": "Google Drive Integration",
+ "istable": 1,
+ "allow_rename": 0,
+ "field_order": [
+  "stage",
+  "photo",
+  "google_drive_file_id",
+  "google_drive_url",
+  "uploaded_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "stage",
+   "fieldtype": "Select",
+   "label": "Stage",
+   "options": "Before\nAfter",
+   "reqd": 1
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach Image",
+   "label": "Photo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "google_drive_file_id",
+   "fieldtype": "Data",
+   "label": "Google Drive File ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "google_drive_url",
+   "fieldtype": "Data",
+   "label": "Google Drive URL",
+   "read_only": 1
+  },
+  {
+   "fieldname": "uploaded_at",
+   "fieldtype": "Datetime",
+   "label": "Uploaded At",
+   "read_only": 1
+  }
+ ]
+}

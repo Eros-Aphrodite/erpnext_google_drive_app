@@ -31,10 +31,11 @@ frappe.ui.form.on("Google Drive Settings", {
         freeze_message: __("Testing Google Drive connection..."),
         callback(r) {
           if (!r.message) return;
+          const ok = r.message.ok !== false;
           frappe.msgprint({
             title: __("Result"),
             message: r.message.message || __("Done"),
-            indicator: "green",
+            indicator: ok ? "green" : "orange",
           });
         },
       });

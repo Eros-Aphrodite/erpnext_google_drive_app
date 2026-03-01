@@ -1,2 +1,3 @@
 [post_model_sync]
 erpnext_google_drive_app.patches.v1_0.add_google_drive_app_to_integrations_workspace
+erpnext_google_drive_app.patches.v1_0.add_google_drive_module_icon

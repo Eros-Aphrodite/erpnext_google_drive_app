@@ -43,10 +43,42 @@ def _get_client(settings) -> GoogleDriveClient:
     return client
 
 
+def _ensure_before_after_folders(mapping, client: GoogleDriveClient, settings):
+    """Ensure both Before and After subfolders exist for a project folder mapping.
+    Creates missing subfolders and updates the mapping so a single project can
+    receive both before and after photos.
+    """
+    if not mapping or not mapping.drive_folder_id:
+        return mapping
+    before_name = settings.before_folder_name or "Before"
+    after_name = settings.after_folder_name or "After"
+    updated = False
+    if not mapping.before_folder_id:
+        mapping.before_folder_id = client.get_or_create_folder(
+            name=before_name, parent_id=mapping.drive_folder_id
+        )
+        updated = True
+    if not mapping.after_folder_id:
+        mapping.after_folder_id = client.get_or_create_folder(
+            name=after_name, parent_id=mapping.drive_folder_id
+        )
+        updated = True
+    if updated:
+        mapping.save(ignore_permissions=True)
+        frappe.db.commit()
+    return mapping
+
+
 def _ensure_project_folders(project_name: str, client: GoogleDriveClient, settings):
+    """Ensure one Drive folder per project with Before and After subfolders.
+    Multiple before and multiple after photos can be uploaded to the same project.
+    """
     mapping = get_by_project(project_name)
     if mapping and mapping.drive_folder_id and mapping.before_folder_id and mapping.after_folder_id:
         return mapping
+    # Existing mapping but missing Before/After subfolders (e.g. manually created)
+    if mapping and mapping.drive_folder_id:
+        return _ensure_before_after_folders(mapping, client, settings)
 
     project = frappe.get_doc("Project", project_name)
     folder_name = project.project_name or project.name
@@ -112,6 +144,8 @@ class ProjectPhoto(Document):
                 frappe.throw(
                     "Drive folder mapping not found. Enable auto-create project folder or create a Google Drive Project Folder record."
                 )
+            # Ensure both Before and After subfolders exist so both can be used for this project
+            mapping = _ensure_before_after_folders(mapping, client, settings)
 
         target_folder_id = mapping.before_folder_id if self.stage == "Before" else mapping.after_folder_id
         if not target_folder_id:

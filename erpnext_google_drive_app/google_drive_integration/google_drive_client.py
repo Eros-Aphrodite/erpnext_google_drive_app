@@ -91,8 +91,15 @@ class GoogleDriveClient:
         if not self.token_expires_at:
             return
 
+        # Normalize to datetime (may come from DB as string or other type)
+        expires_at = self.token_expires_at
+        if not isinstance(expires_at, dt.datetime):
+            import frappe
+            expires_at = frappe.utils.get_datetime(expires_at)
+        self.token_expires_at = expires_at
+
         now = dt.datetime.utcnow()
-        if self.token_expires_at.tzinfo is not None:
+        if getattr(expires_at, "tzinfo", None) is not None:
             now = dt.datetime.now(dt.timezone.utc)
 
         if self.token_expires_at <= now + dt.timedelta(seconds=refresh_skew_seconds):
